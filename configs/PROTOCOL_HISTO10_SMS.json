@@ -1,0 +1,38 @@
+{
+  "protocol": "Histo10 Segmentation-to-Measurement Stability (SMS) pilot v1.0",
+  "created": "2026-11-02",
+  "question": "Can a ground-truth-free per-cell boundary-sensitivity score identify which quantitative single-cell measurements are trustworthy despite segmentation uncertainty?",
+  "scope": "Matched cell identities only; not missing cells, split/merge topology failures, or de novo segmentation.",
+  "method": {
+    "training": "none",
+    "primary_radius_um": 1.0,
+    "perturbations": "binary erosion and dilation of each Mesmer cell by 1.0 um in a local crop",
+    "primary_score": "symmetric normalized span of integrated signal between eroded and dilated masks",
+    "primary_true_error": "symmetric absolute percentage error of raw Mesmer integrated signal versus matched manual-GT cell",
+    "primary_coverage": 0.8,
+    "comparator": "geometry-only symmetric area span under the same +/-1.0 um perturbation"
+  },
+  "development": {
+    "dataset": "TissueNet TRAIN subset previously selected for Histo08",
+    "unit": "parent-balanced",
+    "go_rule": {
+      "matched_cells_min": 1000,
+      "mean_spearman_min": 0.25,
+      "mean_risk_ratio80_max": 0.8,
+      "sms_must_beat_geometry_by": 0.05
+    }
+  },
+  "external": {
+    "dataset": "UNSEG GIT",
+    "run_only_if_development_passes": true,
+    "unit": "image-balanced",
+    "rule": {
+      "matched_cells_min": 500,
+      "mean_spearman_min": 0.2,
+      "mean_risk_ratio80_max": 0.85,
+      "sms_must_beat_geometry_by": 0.03,
+      "bootstrap_upper95_risk_ratio80_lt": 1.0
+    }
+  },
+  "stop_condition": "If TissueNet development fails, do not evaluate UNSEG. If UNSEG fails, stop Histo10 rather than tuning the score on UNSEG."
+}
