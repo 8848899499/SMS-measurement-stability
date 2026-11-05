@@ -1,0 +1,4 @@
+contrast,n_paired_images,mean_error_difference,ci_low,ci_high
+radius_dependent minus always_retained,71,0.054112649235018365,0.03711078947163045,0.07367050904086267
+always_rejected minus always_retained,72,0.12640294713320968,0.09990110529951789,0.1569656174208187
+always_rejected minus radius_dependent,71,0.07215158069015619,0.052638059849506744,0.09666109061203239
