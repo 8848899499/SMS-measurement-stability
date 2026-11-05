@@ -1,0 +1,33 @@
+{
+  "protocol": "Histo10b Mean-Intensity Segmentation-to-Measurement Stability external test v1.0",
+  "created": "2026-11-02",
+  "status": "Frozen before UNSEG Histo10b evaluation",
+  "question": "Can a training-free boundary-sensitivity score identify cells whose mean marker intensity is robust to segmentation uncertainty?",
+  "development": "TissueNet TRAIN only; Histo10 original integrated-signal primary failed. Mean-intensity SMS was a predeclared secondary endpoint and is promoted here as a new frozen Histo10b endpoint.",
+  "external_dataset": "UNSEG GIT, 75 images, expert manual cell masks, 0.16 um/pixel",
+  "method": {
+    "training": "none",
+    "radius_um": 1.0,
+    "score": "symmetric normalized span of per-cell mean membrane intensity under one 1-um erosion and one 1-um dilation of the raw Mesmer cell mask",
+    "true_external_error": "symmetric absolute percentage error of raw Mesmer mean membrane intensity versus matched expert-manual cell",
+    "primary_coverage": 0.7,
+    "matched_identity_requirement": "raw Mesmer cell must match a manual cell at IoU >= 0.5"
+  },
+  "comparators": [
+    "geometry-only area-span under identical +/-1 um perturbation",
+    "inverse sqrt raw-cell area"
+  ],
+  "external_continue_rule": {
+    "matched_cells_min": 500,
+    "image_balanced_spearman_min": 0.2,
+    "image_balanced_risk_ratio_70_max": 0.85,
+    "must_beat_geometry_risk_ratio_70_by": 0.1,
+    "bootstrap_upper95_risk_ratio_70_lt": 1.0
+  },
+  "stop_condition": "If UNSEG fails, STOP this measurement-stability topic. Do not tune radius, score, or coverage on UNSEG.",
+  "guardrails": [
+    "UNSEG manual labels are evaluation-only; they do not enter the SMS score.",
+    "This pilot addresses reliability of matched cell measurements, not missing cells, split/merge failures, or de novo segmentation.",
+    "All coverages 50-90% are reported, but 70% is the frozen primary operating point."
+  ]
+}
