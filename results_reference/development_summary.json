@@ -1,0 +1,13 @@
+{
+  "protocol": "Histo10 SMS development on TissueNet TRAIN only",
+  "method": "Training-free per-cell measurement stability under +/-1.0 um boundary perturbation",
+  "primary_endpoint": "integrated membrane/cell signal",
+  "development_unit": "TissueNet parent (parent-balanced)",
+  "sms_sum": {"n_parents":24,"n_cells":47854,"mean_spearman":0.2845634712218957,"mean_risk_ratio_80":0.9365375731879665,"mean_stable_to_unstable_ratio":0.6414057203834908},
+  "geometry_baseline": {"n_parents":24,"n_cells":47854,"mean_spearman":-0.013684100731717053,"mean_risk_ratio_80":0.9894177734897025,"mean_stable_to_unstable_ratio":1.061168225915184},
+  "inverse_area_baseline": {"n_parents":24,"n_cells":47854,"mean_spearman":-0.0016418157050194458,"mean_risk_ratio_80":0.9893691201764353,"mean_stable_to_unstable_ratio":1.0257876074877432},
+  "secondary_sms_mean": {"n_parents":24,"n_cells":47854,"mean_spearman":0.4846880840943391,"mean_risk_ratio_80":0.8100916495444029,"mean_stable_to_unstable_ratio":0.3502828464695819},
+  "bootstrap_95ci": {"risk_ratio_80_95ci":[0.9232558865287793,0.9505642058672161],"spearman_95ci":[0.23502153399081252,0.3330579691436925]},
+  "go_rule": {"matched_cells_min":1000,"parent_balanced_spearman_min":0.25,"parent_balanced_risk_ratio80_max":0.8,"sms_must_beat_geometry_risk_ratio80_by":0.05},
+  "decision": "STOP_HISTO10_BEFORE_UNSEG"
+}
