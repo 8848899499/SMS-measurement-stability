@@ -1,0 +1,113 @@
+{
+  "protocol": "SMS backbone transfer on UNSEG using Cellpose-SAM cpsam_v2",
+  "sms": {
+    "n_evaluable_cases": 74,
+    "n_cells": 10187,
+    "mean_spearman": 0.19788505105842172,
+    "risk_ratio_10": 0.7730503326623576,
+    "risk_ratio_15": 0.789638022119668,
+    "risk_ratio_20": 0.7940206330524029,
+    "risk_ratio_25": 0.786302766480747,
+    "risk_ratio_30": 0.7971273396216896,
+    "risk_ratio_35": 0.8138443128380654,
+    "risk_ratio_40": 0.8237726516668609,
+    "risk_ratio_45": 0.8305040606783015,
+    "risk_ratio_50": 0.8428736745354669,
+    "risk_ratio_55": 0.8612903247529038,
+    "risk_ratio_60": 0.8732780766777313,
+    "risk_ratio_65": 0.8877087902600159,
+    "risk_ratio_70": 0.901982268818367,
+    "risk_ratio_75": 0.9123452988506686,
+    "risk_ratio_80": 0.9256409136517423,
+    "risk_ratio_85": 0.9399843251088769,
+    "risk_ratio_90": 0.954191289196003,
+    "risk_ratio_95": 0.9698832436174514,
+    "risk_ratio_100": 1.0
+  },
+  "geometry": {
+    "n_evaluable_cases": 74,
+    "n_cells": 10187,
+    "mean_spearman": -0.005540910916689391,
+    "risk_ratio_10": 1.0063327485525342,
+    "risk_ratio_15": 1.0212616879872085,
+    "risk_ratio_20": 1.0295446349721296,
+    "risk_ratio_25": 1.032566866416746,
+    "risk_ratio_30": 1.0134291490117082,
+    "risk_ratio_35": 1.004681657026601,
+    "risk_ratio_40": 1.0028398359048152,
+    "risk_ratio_45": 0.9976942961525324,
+    "risk_ratio_50": 0.9870965817192353,
+    "risk_ratio_55": 0.9908100911497154,
+    "risk_ratio_60": 0.9909336006676323,
+    "risk_ratio_65": 0.9930683740162402,
+    "risk_ratio_70": 0.9931116262727226,
+    "risk_ratio_75": 0.9908747019980919,
+    "risk_ratio_80": 0.9925911136038644,
+    "risk_ratio_85": 0.9916447651244756,
+    "risk_ratio_90": 0.9941321694667167,
+    "risk_ratio_95": 0.9994454164626027,
+    "risk_ratio_100": 1.0
+  },
+  "inverse_area": {
+    "n_evaluable_cases": 74,
+    "n_cells": 10187,
+    "mean_spearman": 0.008944448587928554,
+    "risk_ratio_10": 0.9807558294209305,
+    "risk_ratio_15": 1.002849407818037,
+    "risk_ratio_20": 0.9984562213746447,
+    "risk_ratio_25": 0.9997216893857152,
+    "risk_ratio_30": 0.9847726539759747,
+    "risk_ratio_35": 0.9799188789179156,
+    "risk_ratio_40": 0.9816349275315396,
+    "risk_ratio_45": 0.9784422076556317,
+    "risk_ratio_50": 0.9792834620864215,
+    "risk_ratio_55": 0.9776014406464197,
+    "risk_ratio_60": 0.9801681066550658,
+    "risk_ratio_65": 0.9798728519993702,
+    "risk_ratio_70": 0.9846279192333848,
+    "risk_ratio_75": 0.9841852102782417,
+    "risk_ratio_80": 0.9919586953716886,
+    "risk_ratio_85": 0.9939081899691878,
+    "risk_ratio_90": 0.99975091770437,
+    "risk_ratio_95": 0.9980216443069402,
+    "risk_ratio_100": 1.0
+  },
+  "bootstrap_95ci": {
+    "risk_ratio_70_95ci": [
+      0.884695230766241,
+      0.91850876541421
+    ],
+    "spearman_95ci": [
+      0.16961601442637986,
+      0.2260088127781478
+    ]
+  },
+  "partial_spearman_controlling_geometry_area_intensity": 0.1792489783490371,
+  "within_geometry_tertiles": {
+    "low": {
+      "n_cases": 72,
+      "risk_ratio_70": 0.9203934707577345,
+      "spearman": 0.16847286732054872
+    },
+    "middle": {
+      "n_cases": 72,
+      "risk_ratio_70": 0.9014903941940768,
+      "spearman": 0.19352333441246236
+    },
+    "high": {
+      "n_cases": 72,
+      "risk_ratio_70": 0.8936950753851308,
+      "spearman": 0.18312085493607727
+    }
+  },
+  "predeclared_rule": {
+    "matched_cells_min": 500,
+    "evaluable_images_min": 30,
+    "image_balanced_spearman_min": 0.2,
+    "risk_ratio70_max": 0.9,
+    "risk_ratio70_bootstrap_upper95_lt": 1.0,
+    "sms_beats_geometry_by_at_least": 0.05
+  },
+  "decision": "BACKBONE_TRANSFER_NOT_SUPPORTED",
+  "interpretation": "Robustness analysis on the same external dataset, not a new independent dataset validation."
+}
