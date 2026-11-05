@@ -10,15 +10,15 @@ Authors: **Chih Mao Tsai** and **Jiann-Der Lee**.
 
 Segmentation-to-measurement stability (SMS) is a training-free, per-cell reliability score for quantitative fluorescence measurements. Rather than estimating whether a predicted cell mask is geometrically correct, SMS asks whether the reported **mean fluorescence** changes materially under a small, physically defined inward/outward displacement of the predicted boundary.
 
-The repository mirrors the analysis sequence in the manuscript:
+This public release contains the code needed for the manuscript's main reproducibility path:
 
 1. TissueNet development and endpoint selection.
 2. Frozen external validation on UNSEG gastrointestinal tissue images.
-3. Geometry/size/IoU and subgroup strengthening analyses.
-4. Cellpose-SAM segmentation-backbone transfer stress test.
-5. Physical-scale robustness at 0.5, 1.0, 1.5, and 2.0 µm.
-6. Same-cell decision stability across perturbation radii.
-7. CL3 applicability audit (reported as inconclusive because the preregistered matched-cell minimum was not reached).
+3. Cellpose-SAM segmentation-backbone transfer stress test.
+4. Physical-scale robustness at 0.5, 1.0, 1.5, and 2.0 µm.
+5. Same-cell decision stability across perturbation radii.
+
+Additional explanatory/third-domain audits reported in the manuscript did not define the frozen operating point. The legacy CL3 archive is intentionally not included in v0.1.0 because an early protocol metadata label was superseded during the manuscript audit; no frozen result is silently rewritten here.
 
 The **1.0 µm perturbation radius and 70% coverage operating point remain the frozen primary setting**. The later scale and same-cell analyses are post-hoc robustness/mechanism analyses and are not used to reselect an operating point.
 
@@ -27,13 +27,10 @@ The **1.0 µm perturbation radius and 70% coverage operating point remain the fr
 ```text
 configs/                 frozen protocol/evidence JSON files
 src/development/         TissueNet development code
-src/segmentation/        Mesmer/UNSEG upstream segmentation utilities
 src/external/            frozen UNSEG external SMS evaluation
-src/strengthening/       geometry/size/IoU/subgroup analyses
 src/backbone/            Cellpose-SAM transfer and cross-backbone audit
 src/robustness/          physical-scale and same-cell stability experiments
-src/applicability_cl3/   third-domain applicability audit (inconclusive)
-figures/                 editable figure sources and rebuild scripts
+figures/                 figure rebuild scripts
 results_reference/       compact aggregate reference outputs
 ```
 
