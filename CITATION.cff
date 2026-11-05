@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying manuscript."
+title: "Segmentation-to-Measurement Stability (SMS)"
+type: software
+authors:
+  - family-names: Tsai
+    given-names: Chih Mao
+    orcid: "https://orcid.org/0000-0001-9381-8909"
+  - family-names: Lee
+    given-names: Jiann-Der
+    orcid: "https://orcid.org/0000-0002-8520-2212"
+repository-code: "https://github.com/8848899499/SMS-measurement-stability"
+license: MIT
+version: 0.1.0
+date-released: 2026-11-05
+preferred-citation:
+  type: article
+  title: "Segmentation-to-Measurement Stability for Training-Free Reliability Assessment of Single-Cell Mean Fluorescence Measurements"
+  authors:
+    - family-names: Tsai
+      given-names: Chih Mao
+    - family-names: Lee
+      given-names: Jiann-Der
+  year: 2026
