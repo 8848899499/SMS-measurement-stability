@@ -10,6 +10,7 @@ authors:
     given-names: Jiann-Der
     orcid: "https://orcid.org/0000-0002-8520-2212"
 repository-code: "https://github.com/8848899499/SMS-measurement-stability"
+doi: 10.5281/zenodo.23976851
 license: MIT
 version: 0.1.0
 date-released: 2026-11-05
