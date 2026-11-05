@@ -1,0 +1,11 @@
+{
+  "protocol": "Histo10b frozen mean-intensity SMS external test on UNSEG GIT",
+  "n_images": 75,
+  "sms_mean": {"n_cases":75,"n_cells":6658,"mean_spearman":0.3356035437809527,"risk_ratio_50":0.7521744871481996,"risk_ratio_60":0.787010338506533,"risk_ratio_70":0.8288493785653023,"risk_ratio_80":0.8684044471175437,"risk_ratio_90":0.9237551499566055,"stable_to_unstable_ratio":0.49278943853918755},
+  "geometry_baseline": {"n_cases":75,"n_cells":6658,"mean_spearman":-0.043696430054080415,"risk_ratio_50":1.0124305715392454,"risk_ratio_60":1.0102612898558485,"risk_ratio_70":1.002913801729481,"risk_ratio_80":1.0061854154195162,"risk_ratio_90":1.0013952571572882,"stable_to_unstable_ratio":1.1764612668711933},
+  "inverse_area_baseline": {"n_cases":75,"n_cells":6658,"mean_spearman":-0.021493738648803228,"risk_ratio_50":0.991635345721611,"risk_ratio_60":0.9990019003750936,"risk_ratio_70":0.9989142852967396,"risk_ratio_80":1.0051643895546925,"risk_ratio_90":0.9984336493760302,"stable_to_unstable_ratio":1.1042504897555656},
+  "bootstrap_95ci": {"risk_ratio_70_95ci":[0.8054851525741907,0.8516088911695255],"spearman_95ci":[0.29698539571545074,0.37289298104816615]},
+  "external_rule": {"matched_cells_min":500,"image_balanced_spearman_min":0.2,"image_balanced_risk_ratio70_max":0.85,"sms_must_beat_geometry_by":0.1,"bootstrap_upper95_risk_ratio70_lt":1.0},
+  "decision": "CONTINUE_HISTO10B",
+  "guardrails": ["UNSEG manual masks are used only to compute evaluation error and matches.","SMS itself uses only raw Mesmer mask, red membrane image, and 0.16 um/pixel.","No threshold, radius, coverage, or score was tuned on UNSEG."]
+}
