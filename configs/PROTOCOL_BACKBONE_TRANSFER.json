@@ -1,0 +1,33 @@
+{
+  "protocol": "SMS segmentation-backbone transfer test v1.0",
+  "frozen_date": "2026-11-04",
+  "dataset": "UNSEG GIT only (75 images)",
+  "reason_for_dataset_choice": "Cellpose-SAM training includes TissueNet; TissueNet is therefore excluded from this backbone-transfer experiment.",
+  "segmentation_model": "Cellpose 4.2-series pretrained cpsam_v2; no fine-tuning",
+  "inference": {
+    "input_channels": "UNSEG channel 0 membrane + channel 2 nucleus",
+    "channel_axis": -1,
+    "normalize": true,
+    "flow_threshold": 0.4,
+    "cellprob_threshold": 0.0,
+    "diameter": null,
+    "min_size": 15
+  },
+  "sms": {
+    "measurement": "mean membrane fluorescence",
+    "measurement_channel": 0,
+    "perturbation_radius_um": 1.0,
+    "pixel_size_um": 0.16,
+    "coverage": 0.7,
+    "manual_match_iou_min": 0.5
+  },
+  "support_rule": {
+    "matched_cells_min": 500,
+    "evaluable_images_min": 30,
+    "image_balanced_spearman_min": 0.2,
+    "risk_ratio70_max": 0.9,
+    "bootstrap_upper95_lt": 1.0,
+    "beat_geometry_by": 0.05
+  },
+  "stop_rule": "Do not tune Cellpose thresholds, channels, SMS radius, coverage, or matching threshold after seeing results."
+}
