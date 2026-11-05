@@ -1,0 +1,32 @@
+{
+  "source": "Histo10 SMS TissueNet TRAIN-only development run; UNSEG was not evaluated because the original integrated-signal primary endpoint failed.",
+  "n_parents": 24,
+  "n_matched_cells": 47854,
+  "original_primary_integrated_signal": {
+    "mean_spearman": 0.2845634712218957,
+    "risk_ratio_80": 0.9365375731879665,
+    "decision": "FAILED original Histo10 primary go rule"
+  },
+  "predeclared_secondary_mean_intensity": {
+    "mean_spearman": 0.4846880840943391,
+    "risk_ratio_50": 0.6373210715057483,
+    "risk_ratio_60": 0.6895391305386737,
+    "risk_ratio_70": 0.7487283338524534,
+    "risk_ratio_80": 0.8100916495444029,
+    "risk_ratio_90": 0.8840491196911744,
+    "stable_to_unstable_q25_ratio": 0.3502828464695819,
+    "risk_ratio_70_bootstrap_95ci": [0.70632501, 0.78876987],
+    "spearman_bootstrap_95ci": [0.43468769, 0.52824947],
+    "parents_with_risk_ratio_70_below_1": "24/24"
+  },
+  "mean_intensity_comparators_on_same_true_mean_error": {
+    "geometry_span": {"mean_spearman": -0.10695134682458445, "risk_ratio_70": 1.0416159059584311},
+    "inverse_sqrt_area": {"mean_spearman": -0.0989130231306012, "risk_ratio_70": 1.0389054117712357}
+  },
+  "frozen_choice": {
+    "endpoint": "per-cell mean membrane intensity",
+    "sms_radius_um": 1.0,
+    "primary_coverage": 0.7,
+    "reason": "TissueNet TRAIN development only. 70% coverage provided substantial error reduction in all 24 parents while retaining most cells. This choice is frozen before any UNSEG Histo10b evaluation."
+  }
+}
