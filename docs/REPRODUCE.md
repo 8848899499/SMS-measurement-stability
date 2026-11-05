@@ -24,23 +24,15 @@ Run `src/development/histo10_01_develop_tissuenet.py` with the local TissueNet i
 
 ## 3. Frozen UNSEG external validation
 
-Prepare the UNSEG Mesmer prediction NPZ with `src/segmentation/histo09_01_segment_mesmer.py`, then run:
+Provide the frozen Mesmer prediction NPZ used by the analysis. It must contain `case_names`, `whole_cell`, and `pixel_size`, with the 75 UNSEG cases in sorted TIFF order and pixel size 0.16 µm/pixel. Then run:
 
 ```bash
-python src/external/histo10b_external_unseg.py
+python src/external/histo10b_external_unseg.py --root <UNSEG_ROOT> --mesmer <MESMER_PREDICTIONS_NPZ> --out <OUTPUT_DIR>
 ```
 
 The exact frozen protocol and development evidence are in `configs/PROTOCOL_HISTO10B_MEAN_SMS.json` and `configs/FROZEN_DEVELOPMENT_EVIDENCE.json`. Verification target: `results_reference/unseg_summary.json`.
 
-## 4. Strengthening analyses
-
-```bash
-python src/strengthening/histo10b_strengthening.py
-```
-
-These analyses test geometry/size explanations, partial association, strata, organ summaries, and risk-coverage behavior without changing the frozen SMS method.
-
-## 5. Cellpose-SAM backbone transfer
+## 4. Cellpose-SAM backbone transfer
 
 With the Cellpose environment active:
 
@@ -57,7 +49,7 @@ Optional explanatory audit:
 python src/backbone/03_same_cell_cross_backbone.py
 ```
 
-## 6. Physical-scale robustness
+## 5. Physical-scale robustness
 
 ```bash
 python src/robustness/04_physical_scale_mesmer.py
@@ -70,7 +62,7 @@ Verification targets:
 - `results_reference/physical_scale_native_summary.csv`
 - `results_reference/physical_scale_commoncell_summary.csv`
 
-## 7. Same-cell decision stability
+## 6. Same-cell decision stability
 
 ```bash
 python src/robustness/05_same_cell_decision_stability.py
@@ -85,7 +77,7 @@ Verification targets:
 - `results_reference/decision_class_summary.csv`
 - `results_reference/decision_class_error_contrasts.csv`
 
-## 8. Figures
+## 7. Figures
 
 Figure 1 is stored as the final editable SVG. Figures 4 and 5 include rebuild scripts:
 
