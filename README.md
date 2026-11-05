@@ -1,5 +1,7 @@
 # Segmentation-to-Measurement Stability (SMS)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23976851.svg)](https://doi.org/10.5281/zenodo.23976851)
+
 Code and compact reference outputs for the manuscript:
 
 **Segmentation-to-Measurement Stability for Training-Free Reliability Assessment of Single-Cell Mean Fluorescence Measurements**
@@ -80,3 +82,5 @@ Code in this repository is released under the MIT License. Dataset access and pr
 ## Citation
 
 If you use this code, please cite the accompanying manuscript. Repository citation metadata are provided in [`CITATION.cff`](CITATION.cff).
+
+Frozen TMI submission snapshot: **Zenodo DOI 10.5281/zenodo.23976851**.
